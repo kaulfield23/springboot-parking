@@ -39,4 +39,21 @@ public class ControllerAdvisor {
         return errorMap;
     }
 
+    @ResponseBody
+    @ExceptionHandler(ParkingEventNotFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public Map<String, String> exceptionHandler(ParkingEventNotFoundException exception) {
+        Map<String, String> errorMap = new HashMap<>();
+        errorMap.put("errorMessage", exception.getMessage());
+        return errorMap;
+    }
+
+    @ResponseBody
+    @ExceptionHandler(StopTimeException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public Map<String, String> exceptionHandler(StopTimeException exception) {
+        Map<String, String> errorMap = new HashMap<>();
+        errorMap.put("errorMessage", exception.getMessage());
+        return errorMap;
+    }
 }

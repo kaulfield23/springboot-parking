@@ -42,11 +42,11 @@ public class ParkingEvent {
 
     @CreationTimestamp
     @Column(updatable = false)
-    private LocalDateTime startDate;
+    private LocalDateTime startTime;
 
     @Getter
     @Setter
-    private LocalDateTime stopDate;
+    private LocalDateTime stopTime;
 
     @Getter
     @Setter
