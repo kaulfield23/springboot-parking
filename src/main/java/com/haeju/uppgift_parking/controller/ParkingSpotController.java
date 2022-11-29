@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.haeju.uppgift_parking.model.ParkingSpot;
-import com.haeju.uppgift_parking.repository.ParkingSpotRepository;
 import com.haeju.uppgift_parking.service.ParkingSpotService;
 
 @RestController

@@ -3,6 +3,7 @@ package com.haeju.uppgift_parking.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.haeju.uppgift_parking.exception.CarNotFoundException;
 import com.haeju.uppgift_parking.model.Car;
 import com.haeju.uppgift_parking.model.Person;
 import com.haeju.uppgift_parking.repository.CarRepository;
@@ -21,5 +22,9 @@ public class CarService {
         newCar.setPerson(person);
 
         return carRepository.save(newCar);
+    }
+
+    public Car findCarById(Long id) {
+        return carRepository.findById(id).orElseThrow(() -> new CarNotFoundException(id));
     }
 }
